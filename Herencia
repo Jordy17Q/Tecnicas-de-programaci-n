@@ -1,0 +1,21 @@
+# Clase base
+class Vehiculo:
+    def __init__(self, marca):
+        self.marca = marca
+
+    def mostrar_marca(self):
+        print("Marca:", self.marca)
+
+# Clase derivada
+class Auto(Vehiculo):
+    def __init__(self, marca, puertas):
+        super().__init__(marca)
+        self.puertas = puertas
+
+    def mostrar_detalles(self):
+        self.mostrar_marca()
+        print("Número de puertas:", self.puertas)
+
+# Uso de la herencia
+auto = Auto("Toyota", 4)
+auto.mostrar_detalles()
