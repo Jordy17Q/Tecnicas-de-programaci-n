@@ -1,0 +1,27 @@
+from abc import ABC, abstractmethod
+
+# Clase abstracta
+class FiguraGeometrica(ABC):
+    @abstractmethod
+    def calcular_area(self):
+        pass
+    
+    @abstractmethod
+    def calcular_perimetro(self):
+        pass
+
+# Clase concreta
+class Circulo(FiguraGeometrica):
+    def __init__(self, radio):
+        self.radio = radio
+
+    def calcular_area(self):
+        return 3.1416 * self.radio ** 2
+
+    def calcular_perimetro(self):
+        return 2 * 3.1416 * self.radio
+
+# Uso de la abstracción
+circulo = Circulo(5)
+print("Área:", circulo.calcular_area())
+print("Perímetro:", circulo.calcular_perimetro())
